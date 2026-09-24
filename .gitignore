@@ -1,0 +1,13 @@
+# Python Environment
+venv/
+__pycache__/
+*.pyc
+
+# Node/React Environment
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.env
+
+# IDE Files
+.vscode/
+.idea/
