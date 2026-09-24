@@ -123,6 +123,83 @@ function App() {
           </div>
         </div>
       </div>
+
+      <div className="portfolio-section">
+        {/* Active Trades Table */}
+        <div className="table-container">
+          <div className="table-header">
+             Active Trades (Live Monitoring)
+          </div>
+          <table className="dashboard-table">
+            <thead>
+              <tr>
+                <th>Coin</th>
+                <th>Status</th>
+                <th>Entry Price</th>
+                <th>Current Price</th>
+                <th>Time Remaining</th>
+                <th>Unrealized PnL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" width="24" height="24"/> BTCUSDT</td>
+                <td><span className="status-badge status-open">Running</span></td>
+                <td>$84,000.00</td>
+                <td>${data.current_price.toLocaleString()}</td>
+                <td>36 Hours</td>
+                <td className="value-green">+0.65% (+$23.50)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Trade History Table */}
+        <div className="table-container">
+          <div className="table-header" style={{display: 'flex', justifyContent: 'space-between'}}>
+             <span>Trade History (Last 30 Days)</span>
+             <span style={{fontSize: '1.2rem', color: 'var(--text-muted)'}}>Total PnL: <span className="value-green">+$452.10</span></span>
+          </div>
+          <table className="dashboard-table">
+            <thead>
+              <tr>
+                <th>Coin</th>
+                <th>Result</th>
+                <th>Entry Price</th>
+                <th>Exit Price</th>
+                <th>Duration</th>
+                <th>Realized PnL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" width="24" height="24"/> ETHUSDT</td>
+                <td><span className="status-badge status-win">Take Profit</span></td>
+                <td>$2,600.00</td>
+                <td>$2,730.00</td>
+                <td>12 Hours</td>
+                <td className="value-green">+5.00% (+$130.00)</td>
+              </tr>
+              <tr>
+                <td style={{fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><img src="https://cryptologos.cc/logos/solana-sol-logo.svg" width="24" height="24"/> SOLUSDT</td>
+                <td><span className="status-badge status-loss">Stop Loss</span></td>
+                <td>$150.00</td>
+                <td>$145.50</td>
+                <td>4 Hours</td>
+                <td className="value-red">-3.00% (-$4.50)</td>
+              </tr>
+              <tr>
+                <td style={{fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem'}}><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" width="24" height="24"/> BTCUSDT</td>
+                <td><span className="status-badge status-win">Timeout Close</span></td>
+                <td>$82,000.00</td>
+                <td>$83,640.00</td>
+                <td>48 Hours</td>
+                <td className="value-green">+2.00% (+$1,640.00)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }
